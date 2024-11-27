@@ -4,7 +4,8 @@ import json
 import boto3
 import datetime
 city = input('enter city: ')
-response = requests.get('https://api.openweathermap.org/data/2.5/weather?q='+ city +'&appid=c1dd4956bbef8ccfe90729848ddb7a4f')
+API_key = input('enter api key')
+response = requests.get('https://api.openweathermap.org/data/2.5/weather?q='+ city +'&appid='+ API_Key)
 print(response.json())
 with open('fil','w') as file:
     json.dump(response.json(), file)
